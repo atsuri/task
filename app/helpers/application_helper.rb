@@ -1,6 +1,6 @@
 module ApplicationHelper
     def page_title
-        title = "ohisama"
+        title = "Task Management"
         title = @page_title + " - " + title if @page_title
         title
     end
