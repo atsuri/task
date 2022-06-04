@@ -78,24 +78,10 @@ header {
     padding-top: 4px;
 }
 
-ul.account-menu {
-    text-align: right;
-}
-
 /* フッター */
 footer {
     clear: both;
-    font: 11px Verdana;
-    color: #888;
-    padding: 8px 0;
     border-top: 4px solid #6bb;
-    text-align: center;
-}
-
-footer nav ul li:not(:last-child):after {
-    color: #888;
-    content: " | ";
-    margin: 0 5px;
 }
 
 /* メニューバー */
