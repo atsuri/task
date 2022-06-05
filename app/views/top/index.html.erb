@@ -1,2 +1,15 @@
-<h1><%= @task %></h1>
-<p>頑張ろ</p>
+<% page_title = "今日#{@today}から明後日#{@tomorrow}までの課題表示" %>
+
+<h2><%= page_title %></h2>
+
+<% if @tasks.present? %>
+    <% @tasks.each do |task| %>
+        <ul>
+            <li><%= task.subject %></li>
+            <%= task.limit %><br>
+            <%= task.detail %>
+        </ul>
+    <% end %>
+<% else %>
+    <p>明後日までの課題なし</p>
+<% end %>

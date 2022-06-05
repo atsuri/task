@@ -1,6 +1,7 @@
 <h2>ページ</h2>
 <ul>
     <%= menu_link_to "TOP", :root %>
-    <%= menu_link_to "課題一覧", "#" %>
-    <%= menu_link_to "課題登録", "#" %>
+    <%= menu_link_to "課題一覧", taskmanagements_path(date: "after") %>
+    <%= menu_link_to "課題登録", :new_taskmanagement %>
+    <%= menu_link_to "ログ", taskmanagements_path(date: "before") %>
 </ul>

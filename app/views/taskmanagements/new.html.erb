@@ -1,0 +1,22 @@
+<% page_title = "課題登録" %>
+
+<h1><%= page_title %></h1>
+
+<%= form_for @task do |form| %>
+  
+    <table class="attr">
+        <tr>
+            <th><%= form.label :subject, "授業名" %></th>
+            <td><%= form.text_field :subject, size: 15 %></td>
+        </tr>
+        <tr>
+            <th><%= form.label :detail, "詳細" %></th>
+            <td><%= form.text_field :detail, size: 30 %></td>
+        </tr>
+        <tr>
+            <th><%= form.label :limit, "期限" %></th>
+            <td><%= form.date_field :limit %></td>
+        </tr>
+    </table>
+  <div><%= form.submit "登録" %></div>
+<% end %>
