@@ -1,6 +1,7 @@
 class TaskmanagementsController < ApplicationController
     def index
-        @tasks = Taskmanagement.all
+        @logs = Taskmanagement.where.not(limit: Date.today...)
+        @tasks = Taskmanagement.where.not(limit: ..Date.yesterday)
     end
 
     def show

@@ -4,20 +4,13 @@
     <% if @tasks.present? %>
         <% cnt = 0 %>
         <% @tasks.each do |task| %>
-            <% if task.limit > Date.yesterday %>
-                <ul>
-                    <li><%= task.subject %></li>
-                    <%= task.limit %><br>
-                    <%= task.detail %>
-                    <%= button_to "削除", task, method: :delete,
-                                data: { confirm: "本当に削除しますか？" } %>
-                </ul>
-            <% else %>
-                <% cnt = cnt + 1 %>
-            <% end %>
-        <% end %>
-        <% if cnt == @tasks.length %>
-            <p>課題なし</p>
+            <ul>
+                <li><%= task.subject %></li>
+                <%= task.limit %><br>
+                <%= task.detail %>
+                <%= button_to "削除", task, method: :delete,
+                            data: { confirm: "本当に削除しますか？" } %>
+            </ul>
         <% end %>
     <% else %>
         <p>課題なし</p>
@@ -26,23 +19,15 @@
 <% elsif params[:date] == "before" %>
     <% page_title = "ログ" %>
     <h1><%= page_title %></h1>
-    <% if @tasks.present? %>
-        <% cnt = 0 %>
-        <% @tasks.each do |task| %>
-            <% if task.limit < Date.today %>
-                <ul>
-                    <li><%= task.subject %></li>
-                    <%= task.limit %><br>
-                    <%= task.detail %>
-                    <%= button_to "削除", task, method: :delete,
-                                data: { confirm: "本当に削除しますか？" } %>
-                </ul>
-            <% else %>
-                <% cnt = cnt + 1 %>
-            <% end %>
-        <% end %>
-        <% if cnt == @tasks.length %>
-            <p>今日以前の課題なし</p>
+    <% if @logs.present? %>
+        <% @logs.each do |task| %>
+            <ul>
+                <li><%= task.subject %></li>
+                <%= task.limit %><br>
+                <%= task.detail %>
+                <%= button_to "削除", task, method: :delete,
+                            data: { confirm: "本当に削除しますか？" } %>
+            </ul>
         <% end %>
     <% else %>
         <p>ログなし</p>
